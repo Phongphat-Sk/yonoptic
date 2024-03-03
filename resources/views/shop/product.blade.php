@@ -1,3 +1,4 @@
+@foreach($products as $product)
 <div class="p-2 text-black flex-col mx-5 my-3" style="border:1px solid #333 ;width:200px; font-size: 15px;">
 <div class="m-2 flex justify-center">
     <svg style="width:100%; height:100%;" >
@@ -8,11 +9,16 @@
 </div>
 
     <div class="flex justify-center">
-        {{ 'ชื่อสินค้า' }}
+        {{ $product->name }}
     </div>
 
     <div class="flex justify-center text-red-500">
-            {{ 'ราคาสินค้า ' }}
+       {{ 'ราคาสินค้า ' . $product->price }}
+    </div>
+
+    <div class="flex justify-center text-red-500">
+         {{ 'รายละเอียดสินค้า ' . $product->details }}
     </div>
 
 </div>
+@endforeach

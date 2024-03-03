@@ -7,8 +7,6 @@
             height: 100vh; /* ทำให้เท่ากับความสูงของหน้าเว็บ */
         }
     </style>
-
-
     {{-- แทบค้นหา ซ้าย --}}
     <div class="py-5 pt-10 bg-white">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-9 flex">
@@ -76,15 +74,6 @@
                     {{-- กล่องพื้นหลัง --}}
                     <div class="overflow-hidden p-7 flex flex-wrap" style=" border-radius:.5rem">
                         {{-- ข้อความ/รูป --}}
-                        <div>
-                            @include('shop.product')
-                        </div>
-                        <div>
-                            @include('shop.product')
-                        </div>
-                        <div>
-                            @include('shop.product')
-                        </div>
                         <div>
                             @include('shop.product')
                         </div>

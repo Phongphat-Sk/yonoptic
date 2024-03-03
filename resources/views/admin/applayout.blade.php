@@ -31,10 +31,10 @@
         /* ส่วนที่ 1 */
 
 
-        
+
     </style>
     </head>
-    
+
     <body class="font-sans antialiased" >
             <!-- ส่วนที่ 2 -->
     <canvas class="snow" id="snow" width="1848" height="515"></canvas>
@@ -68,6 +68,8 @@
                     </div>
                 </header>
                 @include('admin.layouts')
+            @elseif(isset($admin))
+                @include('admin.layouts')
             @else
                 @include('admin.layout')
             @endif
@@ -82,11 +84,11 @@
          <!-- ส่วนที่ 3 -->
     <script>
         (function () {
-    
+
         var canvas, ctx;
         var points = [];
         var maxDist = 100;
-    
+
         function init() {
             //Add on load scripts
             canvas = document.getElementById("snow");
@@ -150,7 +152,7 @@
                 update(points[i]);
             };
         }
-    
+
         function resizeCanvas() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
@@ -158,7 +160,7 @@
             generatePoints(window.innerWidth / 3);
             pointFun();
         }
-    
+
         //Execute when DOM has loaded
         document.addEventListener('DOMContentLoaded', init, false);
     })();

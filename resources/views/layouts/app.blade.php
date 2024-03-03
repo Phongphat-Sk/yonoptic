@@ -31,17 +31,16 @@
         /* ส่วนที่ 1 */
 
 
-        
+
     </style>
     </head>
-    
+
     <body class="font-sans antialiased" >
             <!-- ส่วนที่ 2 -->
     <canvas class="snow" id="snow" width="1848" height="515"></canvas>
             <!-- ส่วนที่ 2 -->
 
         <div class="min-h-screen bg-white">
-
             <!-- Page Heading -->
             @if (isset($dash))
                 <header class="bg-white shadow" style="height:120px">
@@ -68,6 +67,8 @@
                     </div>
                 </header>
                 @include('layouts.navigation')
+            @elseif(auth()->check() && auth()->user()->usertype === 'admin')
+                @include('admin.layouts')
             @else
                 @include('layouts.navigation2')
             @endif
@@ -82,11 +83,11 @@
          <!-- ส่วนที่ 3 -->
     <script>
         (function () {
-    
+
         var canvas, ctx;
         var points = [];
         var maxDist = 100;
-    
+
         function init() {
             //Add on load scripts
             canvas = document.getElementById("snow");
@@ -150,7 +151,7 @@
                 update(points[i]);
             };
         }
-    
+
         function resizeCanvas() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
@@ -158,7 +159,7 @@
             generatePoints(window.innerWidth / 3);
             pointFun();
         }
-    
+
         //Execute when DOM has loaded
         document.addEventListener('DOMContentLoaded', init, false);
     })();

@@ -38,7 +38,7 @@
         /* ส่วนที่ 1 */
 
 
-        
+
     </style>
     </head>
 
@@ -47,27 +47,12 @@
     <canvas class="snow" id="snow" width="1848" height="515"></canvas>
             <!-- ส่วนที่ 2 -->
     {{-- header & navbar --}}
-    <div class="min-h-screen bg-white">
-        <header class="bg-white shadow" style="height:150px">
-            <div>
-            @if (Route::has('login'))
-            <div class="sm:top-0 p-2 pl-10 text-left bg-blue-900">
-                    @auth
-            
-                    @else
-                        <a href="{{ route('login') }}" class="font-semibold text-white hover:text-blue-400 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 font-semibold text-white hover:text-blue-400 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-                        @endif
-                    @endauth
-            </div>
-            @endif
-            </div>
+    <div class=" bg-white">
+        <header class="bg-white " style="height:150px">
 
             <div class="flex justify-center">
             <a href="{{ route('home') }}">
-                <x-application-logo class="" style="margin-top:-20%; height: 200px;" />
+                <x-application-logo class="" style="margin-top:-10%; height: 200px;" />
             </a>
             </div>
         </header>
@@ -116,9 +101,9 @@
                         <div class="text-blue-400 ml-5" style="font-size: 25px; font-weight:bold; margin-top:-60%;">{{'LENS'}}</div>
                         <div class="text-white ml-5" style="font-size: 25px; font-weight:bold; ">{{'COLLECTION'}}</div>
                     </div>
-                </div>          
+                </div>
             </a>
-            
+
             <a href="shop " style="height: 250px; width:35%;">
                 <div class=" " style="height: 100%; width:100%;">
                     <div class=" " style="height: 100%; width:100%;">
@@ -203,11 +188,11 @@
         <!-- ส่วนที่ 3 -->
         <script>
         (function () {
-    
+
         var canvas, ctx;
         var points = [];
         var maxDist = 100;
-    
+
         function init() {
             //Add on load scripts
             canvas = document.getElementById("snow");
@@ -271,7 +256,7 @@
                 update(points[i]);
             };
         }
-    
+
         function resizeCanvas() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
@@ -279,7 +264,7 @@
             generatePoints(window.innerWidth / 3);
             pointFun();
         }
-    
+
         //Execute when DOM has loaded
         document.addEventListener('DOMContentLoaded', init, false);
     })();

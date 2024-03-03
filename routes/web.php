@@ -33,6 +33,8 @@ Route::get('/shop', function () {
     return view('shop.shop');
 })->middleware(['auth', 'verified'])->name('shop');
 
+Route::get('/shop', [App\Http\Controllers\ShopController::class, 'index'])->name('shop');
+
 Route::get('admin', [HomeController::class, 'admin'])
   ->middleware(['auth','admin'])->name('admin');
 
@@ -47,6 +49,8 @@ Route::get('/contact', function () {
 Route::get('/productdetail', function () {
     return view('shop.productdetail');
 })->middleware(['auth', 'verified'])->name('productdetail');
+
+Route::get('/productdetail', [App\Http\Controllers\DetailOrdersController::class, 'index'])->name('productdetail');
 
 
 Route::middleware('auth')->group(function () {
