@@ -2,7 +2,6 @@
     {{-- รูปที่มีปุ่มพาเข้าร้าน --}}
     <div class="py-5 bg-white mt-10">
         <div class="max-w-5xl mx-auto sm:px-6 flex space-x-5">
-            @foreach($products as $product)
             {{-- กล่องพื้นหลัง --}}
             <div class="p-2 bg-brown-300 text-black flex-col mx-5 my-3" style="border:1px solid #333 ;width:300px; height:300px; font-size: 15px;">
                 <div class="flex justify-center" style="width:100%; height:100%;">
@@ -18,13 +17,13 @@
             <div class="shadow-sm " style="width:500px">
                 {{-- ข้อความ/รูป --}}
                 <div class="pt-2 px-2 text-black" style="font-size: 25px;">
-                    {{ $product->name }}
+                    {{ $products[0]->name }}
                 </div>
                 <div class="pt-1 px-2 text-gray-300" style="font-size: 15px;">
-                    Product ID: {{ $product->id }}
+                    Product ID: {{ $products[0]->id }}
                 </div>
                 <div class="pt-2 px-2 text-black" style="font-size: 20px;">
-                    {{ $product->price }} THB
+                    {{ $products[0]->price }} THB
                 </div>
                 {{-- สี --}}
                 <div class="pt-2 px-2 text-black flex" style="font-size: 17px;">
@@ -40,7 +39,7 @@
                     </select>
                 </div>
                 <div class="pt-6 px-2 text-black flex flex-wrap" style="font-size: 20px; width:50%">
-                    {{ $product->details }}
+                    {{ $products[0]->details }}
                 </div>
                 <div class="mt-5 flex justify-center flex-col">
                     {{-- ปุ่ม --}}
@@ -52,7 +51,6 @@
                     </a>
                 </div>
             </div>
-            @endforeach
         </div>
     </div>
     <div class="mb-20"></div>

@@ -52,13 +52,13 @@
                       <form action="{{ url('product') }}" method="post" class="">
                         {!! csrf_field() !!}
                         <label style="margin-left: -35px">Name</label>
-                        <input type="text" name="name" id="name" class="form-control mb-4" style="width: 90%"></br>
+                        <input type="text" name="name" id="name" class="form-control mb-4" style="width: 90%"required></br>
                         <label>Price</label>
-                        <input type="text" name="price" id="price" class="form-control mb-4" style="width: 90%"></br>
+                        <input type="text" name="price" id="price" class="form-control mb-4" style="width: 90%"required></br>
                         <label>Details</label>
-                        <input type="text" name="details" id="details" class="form-control mb-4" style="width: 90%"></br>
+                        <input type="text" name="details" id="details" class="form-control mb-4" style="width: 90%"required></br>
                         <label>Picture</label>
-                        <input type="file" name="picture" id="picture" class="form-control mb-4" style="width: 90%"></br>
+                        <input type="file" name="picture" id="picture" class="form-control mb-4" style="width: 90%"required></br>
                         <input type="submit" value="Save" class="mt-10 bg-green-400 px-2 p3 cursor-pointer hover:bg-green-300" style="width:200px; border-radius:10px; height:30px; margin-left:-35px"></br>
                     </form>
                     

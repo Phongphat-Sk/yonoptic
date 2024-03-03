@@ -56,13 +56,13 @@
                         @method("PATCH")
                         <input type="hidden" name="id" id="id" value="{{$products->id}}" id="id" />
                         <label style="margin-left: -105px">Name</label>
-                        <input type="text" name="name" id="name" value="{{$products->name}}" class="form-control mb-4" style="width: 90%"></br>
+                        <input type="text" name="name" id="name" value="{{$products->name}}" class="form-control mb-4" style="width: 90%"required></br>
                         <label>Price</label>
-                        <input type="text" name="price" id="price" value="{{$products->price}}" class="form-control mb-4" style="width: 90%"></br>
+                        <input type="text" name="price" id="price" value="{{$products->price}}" class="form-control mb-4" style="width: 90%"required></br>
                         <label>Details</label>
-                        <input type="text" name="details" id="details" value="{{$products->de}}" class="form-control mb-4" style="width: 90%"></br>
+                        <input type="text" name="details" id="details" value="{{$products->de}}" class="form-control mb-4" style="width: 90%"required></br>
                         <label>Picture</label>
-                        <input type="file" name="picture" id="picture" value="{{$products->picture}}" class="form-control mb-4" style="width: 90%"></br>
+                        <input type="file" name="picture" id="picture" value="{{$products->picture}}" class="form-control mb-4" style="width: 90%"required></br>
                         <input type="submit" value="Update" class="mt-10 bg-yellow-400 px-2 p3 cursor-pointer hover:bg-yellow-300" style="width:200px; border-radius:10px; height:30px; margin-left:-35px"></br>
                     </form>
                     
