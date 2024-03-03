@@ -42,6 +42,8 @@ Route::get('/cart', function () {
     return view('shop.cart');
 })->middleware(['auth', 'verified'])->name('cart');
 
+Route::get('/cart', [App\Http\Controllers\CartController::class, 'sub'])->name('cart.index');
+
 Route::get('/contact', function () {
     return view('contact');
 })->middleware(['auth', 'verified'])->name('contact');
@@ -50,7 +52,7 @@ Route::get('/productdetail', function () {
     return view('shop.productdetail');
 })->middleware(['auth', 'verified'])->name('productdetail');
 
-Route::get('/productdetail', [App\Http\Controllers\DetailOrdersController::class, 'index'])->name('productdetail');
+Route::get('/productdetail/{id}', [App\Http\Controllers\DetailOrdersController::class, 'show'])->name('productdetail');
 
 
 Route::middleware('auth')->group(function () {

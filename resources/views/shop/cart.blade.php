@@ -14,6 +14,7 @@
             <div class="carttopic mx-8" style="width: 60% ;font-size: 35px">
                 {{ 'Cart Summary' }}
                 <div class="mt-3 line bg-gray-500"></div>
+                @include('shop.productcart')
             </div>
 
             <div class="mt-3 mx-8 carttopic text-right" style="width: 30% ;font-size: 20px">
@@ -25,7 +26,7 @@
                         {{ 'Subtotal' }}
                     </div>
                     <div class="topic">
-                        {{ 'xxxx' }}
+                        {{ $totalPrice }}
                     </div>
                     {{ 'THB' }}
                 </div>
@@ -56,7 +57,7 @@
                         </b>
                     </div>
                     <div class="topic mt-1">
-                        {{ 'xxxx' }}
+                        {{ $totalPrice }}
                     </div>
                     <div class="topic mt-1">
                         {{ 'THB' }}
