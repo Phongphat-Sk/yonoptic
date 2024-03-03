@@ -37,9 +37,11 @@
                     {{ $product->details }}
                 </div>
                 <div class="mt-5 flex justify-center flex-col">
-                    <a href="" class="flex justify-center">
-                        <button class="bg-blue-600 mt-5 mx-auto h-10 font-semibold  hover:bg-blue-500" style="border-radius: .1px; width:100%">Add to cart</button>
-                    </a>
+                <form action="{{ route('cart.add') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="product_id" value="{{ $product->id }}">
+                    <button type="submit" class="bg-blue-600 mt-5 mx-auto h-10 font-semibold hover:bg-blue-500" style="border-radius: .1px; width:100%">Add to cart</button>
+                </form>
                     <a href="{{ route('cart.index') }}" class="flex justify-center">
                         <button class="bg-blue-300 mt-2 mx-auto h-10 font-semibold  hover:bg-blue-200" style="border-radius: .1px; width:100%">Buy now</button>
                     </a>

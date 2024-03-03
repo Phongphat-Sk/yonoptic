@@ -44,6 +44,8 @@ Route::get('/cart', function () {
 
 Route::get('/cart', [App\Http\Controllers\CartController::class, 'sub'])->name('cart.index');
 
+Route::post('/add-to-cart', [App\Http\Controllers\CartController::class, 'addToCart'])->name('cart.add');
+
 Route::get('/contact', function () {
     return view('contact');
 })->middleware(['auth', 'verified'])->name('contact');

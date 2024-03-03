@@ -84,13 +84,6 @@ class ProductController extends Controller
         $input = $request->all();
         $product->update($input);
         return redirect('product')->with('flash_message', 'Product Updated!');
-        
-        if($request->id && $request->quantity){
-            $cart = session()->get('cart');
-            $cart[$request->id]["quantity"] = $request->quantity;
-            session()->put('cart', $cart);
-            session()->flash('success', 'Cart successfully updated!');
-        }
     }
  
     /**
