@@ -4,16 +4,17 @@
         <div class="flex justify-center h-16">
             <div class="flex">
 
+
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('home')" :active="request()->routeIs('home
-                    ')">
+
+
+                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
                         {{ __('หน้าหลัก') }}
                     </x-nav-link>
                     <x-nav-link  :href="route('shop')" :active="request()->routeIs('shop')">
                         {{ __('ร้านค้า') }}
                     </x-nav-link>
-
                     <x-nav-link :href="route('contact')" :active="request()->routeIs('contact')">
                         {{ __('ติดต่อเรา') }}
                     </x-nav-link>
@@ -56,6 +57,10 @@
                     <x-slot name="content">
                         <x-dropdown-link :href="route('profile.edit')">
                             {{ __('Profile') }}
+                        </x-dropdown-link>
+
+                        <x-dropdown-link :href="route('admin')">
+                            {{ __('Admin') }}
                         </x-dropdown-link>
 
                         <!-- Authentication -->

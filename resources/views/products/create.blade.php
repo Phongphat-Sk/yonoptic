@@ -46,31 +46,32 @@
         {{-- กล่องขวา --}}
         <div class="rightbox flex flex-col mx-auto w-full pt-20 pr-10">
 
-            <div class="bg-white" style="margin:0;border-radius:20px">
-                  <div class="card-header px-10 " style="margin-top:0px; height:50px; font-size: 25px">Create new product</div>
-                  <div class="card-body px-10">
-                      <form action="{{ url('product') }}" method="post" class="">
-                        {!! csrf_field() !!}
-                        <label style="margin-left: -35px">Name</label>
-                        <input type="text" name="name" id="name" class="form-control mb-4" style="width: 90%"required></br>
-                        <label>Price</label>
-                        <input type="text" name="price" id="price" class="form-control mb-4" style="width: 90%"required></br>
-                        <label>Details</label>
-                        <input type="text" name="details" id="details" class="form-control mb-4" style="width: 90%"required></br>
-                        <label>Shape</label>
-                        <input type="text" name="shape" id="shape" class="form-control mb-4" style="width: 90%"required></br>
-                        <label>Color</label>
-                        <input type="text" name="color" id="color" class="form-control mb-4" style="width: 90%"required></br>
-                        <label>Material</label>
-                        <input type="text" name="material" id="material" class="form-control mb-4" style="width: 90%"required></br>
-                        <label>Type</label>
-                        <input type="text" name="type" id="type" class="form-control mb-4" style="width: 90%"required></br>
-                        <label>Picture</label>
-                        <input type="file" name="picture" id="picture" class="form-control mb-4" style="width: 90%"required></br>
-                        <input type="submit" value="Save" class="mt-10 bg-green-400 px-2 p3 cursor-pointer hover:bg-green-300" style="width:200px; border-radius:10px; height:30px; margin-left:-35px"></br>
-                    </form>
-                    
-                  </div>
+            <div class="bg-white p-10" style="margin:0;border-radius:20px">
+                  <div class="card-header px-10 " style="margin-top:0px; height:50px; font-size: 25px">Create new product</div>
+                  <div class="card-body px-10">
+                      <form action="{{ url('product') }}" method="post" class="">
+                        {!! csrf_field() !!}
+
+                        <label style="">Name</label>
+                        <input type="text" name="name" id="name" class="form-control ml-8 mb-4" style="width: 90%"required></br>
+                        <label>Price</label></br>
+                        <input type="text" name="price" id="price" class="form-control mb-4" style="width: 90%"required></br>
+                        <label>Details</label></br>
+                        <input type="text" name="details" id="details" class="form-control mb-4" style="width: 90%"required></br>
+                        <label class="ml-8">Shape</label></br>
+                        <input type="text" name="shape" id="shape" class="form-control mb-4" style="width: 90%"required></br>
+                        <label class="ml-8">Color</label></br>
+                        <input type="text" name="color" id="color" class="form-control mb-4" style="width: 90%"required></br>
+                        <label class="ml-8">Material</label></br>
+                        <input type="text" name="material" id="material" class="form-control mb-4" style="width: 90%"required></br>
+                        <label class="ml-8">Type</label></br>
+                        <input type="text" name="type" id="type" class="form-control mb-4" style="width: 90%"required></br>
+                        <label class="ml-8">Picture</label></br>
+                        <input type="file" name="picture" id="picture" class="form-control mb-4" style="width: 90%"required></br>
+                        <input type="submit" value="Save" class="mt-10 bg-green-400 px-2 p3 cursor-pointer hover:bg-green-300" style="width:200px; border-radius:10px; height:30px; margin-left:-35px"></br>
+                    </form>
+                    
+                  </div>
             </div>
 
 
@@ -81,5 +82,3 @@
 
 
 </x-app-layout>
-
-  

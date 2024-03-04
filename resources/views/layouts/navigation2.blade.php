@@ -7,7 +7,7 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex ">
 
-                    <!-- โลโก้พื้นหลังขาว -->
+                    <!-- โลโก้ -->
                     <div class="pt-3 sm:flex sm:justify-center sm:items-center mr-10" style="border:none; margin-left: -10%">
                         <a href="{{ route('home') }}">
                             <x-application-logo class="" style="height: 200px;" />
@@ -19,44 +19,8 @@
                         {{ __('หน้าหลัก') }}
                     </x-nav-link>
                     <x-nav-link  :href="route('shop')" :active="request()->routeIs('shop')">
-                        {{ __('กรอบแว่น') }}
+                        {{ __('ร้านค้า') }}
                     </x-nav-link>
-                    <!-- Settings Dropdown -->
-                    <div class="hidden sm:flex sm:items-center sm:ms-2">
-                        <x-dropdown align="left" width="48">
-                        <x-slot name="trigger">
-                            <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-900 hover:text-blue-400 focus:outline-none transition ease-in-out duration-150">
-                                <div>{{ __('เลนส์') }}</div>
-
-                                <div class="ms-1">
-                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                    </svg>
-                                </div>
-                            </button>
-                        </x-slot>
-
-                        <x-slot name="content">
-                            <x-dropdown-link :href="route('shop')">
-                                {{ __('คอนเทคเลนส์') }}
-                            </x-dropdown-link>
-                            <x-dropdown-link :href="route('shop')">
-                                {{ __('เลนส์') }}
-                            </x-dropdown-link>
-
-                            <!-- Authentication -->
-                            <!-- <form method="POST" action="{{ route('logout') }}">
-                                @csrf
-
-                                <x-dropdown-link :href="route('logout')"
-                                        onclick="event.preventDefault();
-                                                    this.closest('form').submit();">
-                                    {{ __('กดแล้วเด้งนะ') }}
-                                </x-dropdown-link>
-                            </form> -->
-                        </x-slot>
-                    </x-dropdown>
-                </div>
 
                     <x-nav-link :href="route('contact')" :active="request()->routeIs('contact')">
                         {{ __('ติดต่อเรา') }}
@@ -163,26 +127,9 @@
                     {{ __('Home') }}
                 </x-responsive-nav-link>
                 <x-responsive-nav-link :href="route('shop')" :active="request()->routeIs('shop')">
-                    {{ __('กรอบแว่น') }}
+                    {{ __('ร้านค้า') }}
                 </x-responsive-nav-link>
                 <!-- Settings Dropdown -->
-                <x-responsive-nav-link>
-                    {{ __('เลนส์') }}
-                    <x-responsive-nav-link :href="route('profile.edit')">
-                        {{ __('นี่ก็เลนส์เหมือนกัน') }}
-                    </x-responsive-nav-link>
-                    <!-- Authentication -->
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-
-                        <x-responsive-nav-link :href="route('logout')"
-                                onclick="event.preventDefault();
-                                            this.closest('form').submit();">
-                            {{ __('กดแล้วเด้งนะ') }}
-                        </x-responsive-nav-link>
-                    </form>
-
-                </x-responsive-nav-link>
 
                 <x-responsive-nav-link :href="route('contact')" :active="request()->routeIs('contact')">
                     {{ __('ติดต่อเรา') }}

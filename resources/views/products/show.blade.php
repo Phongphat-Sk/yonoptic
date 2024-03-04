@@ -47,20 +47,20 @@
         <div class="rightbox flex flex-col mx-auto w-full pt-20 pr-10">
 
             <div class="bg-white" style="margin:0;border-radius:20px">
-                  <div class="card-header px-10 " style="margin-top:0px; height:50px; font-size: 25px">Product detail</div>
-                  <div class="card-body px-10">
-                        <div class="card-body" style="margin-top:-5%">
-                        <h5 class="card-title">Name : {{ $products->name }}</h5>
-                        <p class="card-text">Price : {{ $products->price }}</p>
-                        <p class="card-text">Details : {{ $products->details }}</p>
+                  <div class="card-header px-10 " style="margin-top:0px; height:50px; font-size: 25px">Product detail</div>
+                  <div class="card-body px-10">
+                        <div class="card-body" style="margin-top:-5%">
+                        <h5 class="card-title">Name : {{ $products->name }}</h5>
+                        <p class="card-text">Price : {{ $products->price }}</p>
+                        <p class="card-text">Details : {{ $products->details }}</p>
                         <p class="card-text mt-7">Picture : {{ $products->picture }}</p>
-                        <p class="card-text">Details : {{ $products->shape }}</p>
-                        <p class="card-text">Details : {{ $products->color }}</p>
-                        <p class="card-text">Details : {{ $products->material }}</p>
-                        <p class="card-text">Details : {{ $products->type }}</p>
-                   </div>
-                    </hr>
-                  </div>
+                        <p class="card-text">Shape : {{ $products->shape }}</p>
+                        <p class="card-text">Color : {{ $products->color }}</p>
+                        <p class="card-text">Meterial : {{ $products->material }}</p>
+                        <p class="card-text">Type : {{ $products->type }}</p>
+                   </div>
+                    </hr>
+                  </div>
             </div>
 
 
@@ -72,6 +72,4 @@
 
 </x-app-layout>
 
-  
-
-  
+  

@@ -17,7 +17,6 @@
                 @include('shop.prohis')
             </div>
 
-
             <div class="mb-10"></div>
 
         </div>

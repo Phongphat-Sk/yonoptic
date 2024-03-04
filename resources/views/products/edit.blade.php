@@ -47,36 +47,38 @@
         <div class="rightbox flex flex-col mx-auto w-full pt-20 pr-10">
 
 
-            <div class="bg-white" style="margin:0;border-radius:20px">
-                  <div class="card-header px-10 " style="margin-top:0px; height:50px; font-size: 25px">Edit product</div>
-                  <div class="card-body px-10">
-                       
-                      <form action="{{ url('product/' .$products->id) }}" method="post">
-                        {!! csrf_field() !!}
-                        @method("PATCH")
-                        <input type="hidden" name="id" id="id" value="{{$products->id}}" id="id" />
-                        <label style="margin-left: -105px">Name</label>
-                        <input type="text" name="name" id="name" value="{{$products->name}}" class="form-control mb-4" style="width: 90%"required></br>
-                        <label>Price</label>
-                        <input type="text" name="price" id="price" value="{{$products->price}}" class="form-control mb-4" style="width: 90%"required></br>
-                        <label>Details</label>
-                        <input type="text" name="details" id="details" value="{{$products->de}}" class="form-control mb-4" style="width: 90%"required></br>
+            <div class="bg-white p-10" style="margin:0;border-radius:20px">
+                  <div class="card-header px-10 " style="margin-top:0px; height:50px; font-size: 25px">Edit product</div>
+                  <div class="card-body px-10 ">
+                       
+                      <form action="{{ url('product/' .$products->id) }}" method="post">
+                        {!! csrf_field() !!}
+                        @method("PATCH")
+                        
+                        <input type="hidden" name="id" id="id" value="{{$products->id}}" id="id" />
+                        <label style="">Name</label>
+                        <input type="text" name="name" id="name" value="{{$products->name}}" class="form-control mb-4" style="width: 90%"required></br>
+                        <label class='mr-3'>Price</label>
+                        <input type="text" name="price" id="price" value="{{$products->price}}" class="form-control mb-4" style="width: 90%"required></br>
+                        <label>Details</label>
+                        <input type="text" name="details" id="details" value="{{$products->de}}" class="form-control mb-4" style="width: 90%"required></br>
+                        <label class="ml-8">Shape</label></br>
+                        <input type="text" name="shape" id="shape" class="form-control mb-4" style="margin-left:-30px; width: 90%"required></br>
+                        <label class="ml-8">Color</label></br>
+                        <input type="text" name="color" id="color" class="form-control mb-4" style="margin-left:-30px;width: 90%"required></br>
+                        <label class="ml-8">Material</label></br>
+                        <input type="text" name="material" id="material" class="form-control mb-4" style="margin-left:-30px;width: 90%"required></br>
+                        <label class="ml-8">Type</label></br>
+                        <input type="text" name="type" id="type" class="form-control mb-4" style="margin-left:-30px;width: 90%"required></br>
+
                         <label>Picture</label>
-                        <input type="file" name="picture" id="picture" value="{{$products->picture}}" class="form-control mb-4" style="width: 90%"required></br>
-                        <label>Shape</label>
-                        <input type="file" name="picture" id="picture" class="form-control mb-4" style="width: 90%"required></br>
-                        <label>Color</label>
-                        <input type="file" name="picture" id="picture" class="form-control mb-4" style="width: 90%"required></br>
-                        <label>Material</label>
-                        <input type="file" name="picture" id="picture" class="form-control mb-4" style="width: 90%"required></br>
-                        <label>Type</label>
-                        <input type="file" name="picture" id="picture" class="form-control mb-4" style="width: 90%"required></br>
-                        <input type="submit" value="Update" class="mt-10 bg-yellow-400 px-2 p3 cursor-pointer hover:bg-yellow-300" style="width:200px; border-radius:10px; height:30px; margin-left:-35px"></br>
-                    </form>
-                    
-                  </div>
+                        <input type="file" name="picture" id="picture" value="{{$products->picture}}" class="form-control mb-4" style="width: 90%"required></br>
+                        <input type="submit" value="Update" class="mt-10 bg-yellow-400 px-2 p3 cursor-pointer hover:bg-yellow-300" style="width:200px; border-radius:10px; height:30px; margin-left:-35px"></br>
+                    </form>
+                    
+                  </div>
                 </div>
-                  
+                  
 
 
         </div>
@@ -86,7 +88,3 @@
 
 
 </x-app-layout>
-
-  
-
-  

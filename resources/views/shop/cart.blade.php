@@ -62,9 +62,11 @@
                 <div class="mt-5 line bg-gray-400" ></div>
                 <div class="mt-5 flex justify-center flex-col">
                     {{-- ปุ่ม --}}
-                    <a href="{{ route('history') }}" class=" flex justify-center">
-                        <button class="bg-blue-700 mt-5 mx-auto h-14 text-white font-semibold  hover:bg-blue-500" style="border-radius: .1px; width:100%; font-weight:bold">Proceed to Checkout</button>
-                    </a>
+                    <form action="{{ route('checkout.process') }}" method="POST">
+                        @csrf
+                       <button type="submit" class="bg-blue-700 mt-5 mx-auto h-14 text-white font-semibold  hover:bg-blue-500" style="border-radius: .1px; width:100%; font-weight:bold">Proceed to Checkout</button>
+                    </form>
+
                     <a href="/" class=" flex justify-center">
                         <button class="bg-blue-700 mt-5 mx-auto h-14 text-white font-semibold  hover:bg-blue-500" style="border-radius: 25px; width:50%">กลับสู่หน้าหลัก</button>
                     </a>

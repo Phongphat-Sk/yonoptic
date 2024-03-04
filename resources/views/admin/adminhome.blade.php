@@ -56,7 +56,11 @@
             </a>
             </div>
         </header>
-    @include('admin.layouts')
+    @if(isset($home))
+        @include('admin.layouts')
+        @else
+        @include('admin.layouts2')
+    @endif
 
     <main>
     {{-- รูปแนะนำบนสุดเบิ้มๆ --}}

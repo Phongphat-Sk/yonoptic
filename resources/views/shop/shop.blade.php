@@ -1,5 +1,17 @@
 <x-app-layout>
 
+    <script>
+        function handleCategoryChange(selectElement) {
+            var selectedCategoryId = selectElement.value;
+
+            if (selectedCategoryId) {
+                var dynamicLink = "{{ route('productdetail', ['id' => '/']) }}/" + selectedCategoryId;
+                window.location.href = dynamicLink;
+            }
+        }
+    </script>
+
+
     <style>
         /* เส้น */
         .line {
@@ -16,37 +28,33 @@
                 <div class="px-6 pt-6 text-blue-900 flex" style="font-size: 15px;">
                     {{ 'ทรงแว่น | Shape' }}
                 </div>
-                <div class="px-6 pt-2 text-blue-900 flex">
-                @foreach ($products as $category)
-                    <form action="{{ route('productdetail', ['id' => $category->id])}}" method="GET">
-                    @endforeach
-                        <select name="category" style="border-radius: .5rem; font-size:14px">
+                <div class="px-6 pt-2 text-blue-900 flex flex-col space-y-2">
+                    <form id="categoryForm" action="{{ route('productdetail', ['id' => '/']) }}" method="GET">
+                        @csrf
+                        <select name="category" style="border-radius: .5rem; font-size:14px" onchange="handleCategoryChange(this)">
                             <option value="" selected disabled>Select Category</option>
                             @foreach ($products as $category)
                                 <option value="{{ $category->id }}">{{ $category->shape }}</option>
                             @endforeach
                         </select>
-
-                        <button type="submit" class="ml-2" >Search</button>
                     </form>
                 </div>
+
+
 
                 {{-- สี --}}
                 <div class="pt-6 px-6 text-blue-900 flex" style="font-size: 15px;">
                     {{ 'สี | Color' }}
                 </div>
                 <div class="px-6 pt-2 text-blue-900 flex">
-                @foreach ($products as $category)
-                    <form action="{{ route('productdetail', ['id' => $category->id])}}" method="GET">
-                    @endforeach
-                        <select name="category" style="border-radius: .5rem; font-size:14px">
+                    <form id="categoryForm" action="{{ route('productdetail', ['id' => '/']) }}" method="GET">
+                        @csrf
+                        <select name="category" style="border-radius: .5rem; font-size:14px" onchange="handleCategoryChange(this)">
                             <option value="" selected disabled>Select Category</option>
                             @foreach ($products as $category)
                                 <option value="{{ $category->id }}">{{ $category->color }}</option>
                             @endforeach
                         </select>
-
-                        <button type="submit" class="ml-2" >Search</button>
                     </form>
                 </div>
 
@@ -55,17 +63,14 @@
                     {{ 'วัสดุ | Material' }}
                 </div>
                 <div class="px-6 pt-2 text-blue-900 flex">
-                @foreach ($products as $category)
-                    <form action="{{ route('productdetail', ['id' => $category->id])}}" method="GET">
-                    @endforeach
-                        <select name="category" style="border-radius: .5rem; font-size:14px">
+                    <form id="categoryForm" action="{{ route('productdetail', ['id' => '/']) }}" method="GET">
+                        @csrf
+                        <select name="category" style="border-radius: .5rem; font-size:14px" onchange="handleCategoryChange(this)">
                             <option value="" selected disabled>Select Category</option>
                             @foreach ($products as $category)
-                                <option value="{{ $category->id }}">{{ $category->material }}</option>
+                                <option value="{{ $category->id }}">{{ $category->meterial }}</option>
                             @endforeach
                         </select>
-
-                        <button type="submit" class="ml-2" >Search</button>
                     </form>
                 </div>
 
@@ -74,17 +79,14 @@
                     {{ 'ประเภท | Type' }}
                 </div>
                 <div class="px-6 pt-2 text-blue-900 flex">
-                @foreach ($products as $category)
-                    <form action="{{ route('productdetail', ['id' => $category->id])}}" method="GET">
-                    @endforeach
-                        <select name="category" style="border-radius: .5rem; font-size:14px">
+                    <form id="categoryForm" action="{{ route('productdetail', ['id' => '/']) }}" method="GET">
+                        @csrf
+                        <select name="category" style="border-radius: .5rem; font-size:14px" onchange="handleCategoryChange(this)">
                             <option value="" selected disabled>Select Category</option>
                             @foreach ($products as $category)
                                 <option value="{{ $category->id }}">{{ $category->type }}</option>
                             @endforeach
                         </select>
-
-                        <button type="submit" class="ml-2" >Search</button>
                     </form>
                 </div>
             </div>
@@ -97,7 +99,6 @@
                         <div>
                             @include('shop.product')
                         </div>
-                    </div>
                 </div>
             </div>
 
@@ -107,3 +108,4 @@
     </div>
 
 </x-app-layout>
+ 

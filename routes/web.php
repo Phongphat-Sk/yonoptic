@@ -4,7 +4,9 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\HistoryController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,9 +36,12 @@ Route::get('/shop', function () {
     return view('shop.shop');
 })->middleware(['auth', 'verified'])->name('shop');
 
-Route::get('/history', function () {
+/*Route::get('/history', function () {
     return view('shop.history');
-})->middleware(['auth', 'verified'])->name('history');
+})->middleware(['auth', 'verified'])->name('history');*/
+
+Route::get('/history', [HistoryController::class, 'index'])->name('history');
+Route::post('/history', [HistoryController::class, 'store']);
 
 Route::get('/shop', [App\Http\Controllers\ShopController::class, 'index'])->name('shop');
 
@@ -76,3 +81,5 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::post('/checkout', [CheckoutController::class, 'proceedToCheckout'])->name('checkout.process');

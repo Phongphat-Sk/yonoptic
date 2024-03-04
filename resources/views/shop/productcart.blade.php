@@ -16,21 +16,21 @@
         </div>
 
         <div class="flex justify-center text-red-500">
-            {{ $item['price'] }}
+            {{ $item['price'] . '$'}}
         </div>
 
         <div class="flex justify-center text-red-500">
-            {{ $item['qty'] }}
+            {{ $item['qty'] . 'ชิ้น'}}
         </div>
 
     </div>
 
-    <form action="{{ route('cart.remove', ['id' => $item['id'], 'qty' => 1]) }}" method="POST">
+    <form action="{{ route('cart.remove', ['id' => $item['id'], 'qty' => 1]) }}" class="my-auto" method="POST">
         @csrf
         @method('DELETE')
         <!-- เพิ่ม input hidden เพื่อระบุจำนวนสินค้าที่ต้องการลบ -->
         <input type="hidden" name="qty" value="1">
-        <button type="submit" class="bg-red-500 h-10 my-auto hover:bg-red-400" style="width: 20%">Delete</button>
+        <button type="submit" class="bg-red-500 h-10 px-6 my-auto hover:bg-red-400" style="width: 100%; border-radius:15px">Delete</button>
     </form>
 
 
