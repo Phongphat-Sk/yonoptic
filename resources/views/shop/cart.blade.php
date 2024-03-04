@@ -6,6 +6,9 @@
             height: 1px;
         }
     </style>
+    @php
+        $totalPrice = 0;
+    @endphp
 
 
     {{-- แทบค้นหา ซ้าย --}}
@@ -25,31 +28,16 @@
                     <div class="topic">
                         {{ 'Subtotal' }}
                     </div>
-                    @foreach($cart as $item)
                     <div class="topic flex flex-col">
-                        {{ $item['price'] }}
+                        @foreach($cart as $item)
+                            <div class="price">
+                                {{ $item['price'] }}
+                            </div>
+                        @endforeach
                     </div>
-                    @endforeach
                     {{ 'THB' }}
                 </div>
                 <div class="mt-5 line bg-gray-400" ></div>
-
-                {{-- shipping&changlocation --}}
-                <div class="mt-5 text-left flex " style="">
-                    <div class="topic mr-4">
-                        {{ 'Shipping To' }}
-                    </div>
-                    <div class="topic">
-                        {{ '*******' }}
-                    </div>
-                </div>
-                {{-- change location ปุ่มแดง --}}
-                <div class="text-red-500 text-left ml-4" style="font-size: 16px">
-                    <a href="">
-                        {{ 'Change location' }}
-                    </a>
-                </div>
-                <div class="mt-10 line bg-gray-400" ></div>
 
                 {{-- total --}}
                 <div class="mt-5 text-left flex justify-between" style="">
@@ -59,10 +47,14 @@
                         </b>
                     </div>
                     @foreach($cart as $item)
-                    <div class="topic mt-1">
-                        {{ $item['qty'] * $item['price'] }}
-                    </div>
+                    @php
+                            $totalPrice += $item['qty'] * $item['price'];
+                    @endphp
                     @endforeach
+                    <div class="topic mt-1">
+                        {{ $totalPrice }}
+                    </div>
+
                     <div class="topic mt-1">
                         {{ 'THB' }}
                     </div>
@@ -70,7 +62,7 @@
                 <div class="mt-5 line bg-gray-400" ></div>
                 <div class="mt-5 flex justify-center flex-col">
                     {{-- ปุ่ม --}}
-                    <a href="" class=" flex justify-center">
+                    <a href="{{ route('history') }}" class=" flex justify-center">
                         <button class="bg-blue-700 mt-5 mx-auto h-14 text-white font-semibold  hover:bg-blue-500" style="border-radius: .1px; width:100%; font-weight:bold">Proceed to Checkout</button>
                     </a>
                     <a href="/" class=" flex justify-center">

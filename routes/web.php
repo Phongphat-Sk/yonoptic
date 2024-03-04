@@ -56,6 +56,8 @@ Route::delete('/cart/{id}', [App\Http\Controllers\CartController::class, 'remove
 
 Route::post('/cart', [App\Http\Controllers\CartController::class, 'addToCart'])->name('cart.add');
 
+Route::post('/checkout', [App\Http\Controllers\CartController::class, 'checkout'])->name('cart.checkout');
+
 Route::get('/contact', function () {
     return view('contact');
 })->middleware(['auth', 'verified'])->name('contact');

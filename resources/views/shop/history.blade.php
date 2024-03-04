@@ -14,7 +14,7 @@
             <div class="carttopic mx-8" style="width: 100% ;font-size: 35px">
                 {{ 'Order History' }}
                 <div class="mt-3 line bg-gray-500 mb-10"></div>
-                <div class="bg-green-500 ตำแหน่งข้อมูลวางทับได้เลย" style="width: 100%; height:250px"></div>
+                @include('shop.prohis')
             </div>
 
 

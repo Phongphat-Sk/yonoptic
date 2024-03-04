@@ -25,11 +25,15 @@
 
     </div>
 
-    <form action="{{ route('cart.remove', ['id' => $item['id']]) }}" method="POST">
+    <form action="{{ route('cart.remove', ['id' => $item['id'], 'qty' => 1]) }}" method="POST">
         @csrf
         @method('DELETE')
+        <!-- เพิ่ม input hidden เพื่อระบุจำนวนสินค้าที่ต้องการลบ -->
+        <input type="hidden" name="qty" value="1">
         <button type="submit" class="bg-red-500 h-10 my-auto hover:bg-red-400" style="width: 20%">Delete</button>
     </form>
+
+
 
 
 </div>
