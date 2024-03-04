@@ -10,24 +10,15 @@ class CartController extends Controller
 {
     public function index()
     {
-        $products = Product::all(); // ดึงข้อมูลสินค้าทั้งหมด
-        return view('shop.cart', compact('products')); // ส่งข้อมูลสินค้าไปยังหน้า shop.blade.php
-    }
-
-    public function sub()
-    {
-        // ดึงรายการสินค้าทั้งหมด
         $products = Product::all();
-
-        // คำนวณราคารวม
-        $totalPrice = 0;
-        foreach ($products as $product) {
-            $totalPrice += $product->price;
-        }
-
-        // ส่งข้อมูลไปยังหน้า view
-        return view('shop.cart', compact('products', 'totalPrice'));
+        $cart = Session::get('cart');
+        if(!$cart) {
+            $cart = [];
+        } // ดึงข้อมูลสินค้าทั้งหมด
+        //return view('shop.cart', compact('products')); // ส่งข้อมูลสินค้าไปยังหน้า shop.blade.php
+        return view('shop.cart')->with('cart', $cart);
     }
+    
 
     public function addToCart(Request $request)
     {
@@ -53,6 +44,20 @@ class CartController extends Controller
 
         Session::put('cart', $cart);
 
-        return redirect()->route('cart.index')->with('success_message', 'สินค้าถูกเพิ่มในตะกร้าแล้ว');
+        return view('shop.cart')->with('cart', $cart);
     }
+
+    public function remove($id)
+    {
+        $cart = Session::get('cart');
+        
+        // ตรวจสอบว่าสินค้าที่ต้องการลบอยู่ในตะกร้าหรือไม่
+        if(isset($cart[$id])) {
+            unset($cart[$id]); // ลบสินค้าออกจากตะกร้าโดยใช้คีย์ ID
+            Session::put('cart', $cart); // อัปเดตตะกร้าใน Session
+        }
+        
+        return view('shop.cart')->with('cart', $cart);
+    }
+
 }

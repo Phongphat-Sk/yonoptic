@@ -19,6 +19,10 @@ return new class extends Migration
             $table->string("price");
             $table->string("details");
             $table->string("picture");
+            $table->string("shape");
+            $table->string("color");
+            $table->string("material");
+            $table->string("type");
             $table->timestamps();
         });
     }

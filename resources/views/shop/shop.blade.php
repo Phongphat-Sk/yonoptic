@@ -17,13 +17,18 @@
                     {{ 'ทรงแว่น | Shape' }}
                 </div>
                 <div class="px-6 pt-2 text-blue-900 flex">
-                    <select class="h-10" style="border-radius: .5rem; font-size:14px" onchange="this.form.submit()">
-                        <option value="">กรุณาเลือก</option>
-                                                <option value="34">Adidas</option>
-                                                <option value="67">Bausch &amp; Lomb</option>
-                                                <option value="16">Beverly Hills Polo Club : BHPC</option>
-                                                <option value="39" >Bossini</option>
-                    </select>
+                @foreach ($products as $category)
+                    <form action="{{ route('productdetail', ['id' => $category->id])}}" method="GET">
+                    @endforeach
+                        <select name="category" style="border-radius: .5rem; font-size:14px">
+                            <option value="" selected disabled>Select Category</option>
+                            @foreach ($products as $category)
+                                <option value="{{ $category->id }}">{{ $category->shape }}</option>
+                            @endforeach
+                        </select>
+
+                        <button type="submit" class="ml-2" >Search</button>
+                    </form>
                 </div>
 
                 {{-- สี --}}
@@ -31,13 +36,18 @@
                     {{ 'สี | Color' }}
                 </div>
                 <div class="px-6 pt-2 text-blue-900 flex">
-                    <select class="h-10" style="border-radius: .5rem; font-size:14px" onchange="this.form.submit()">
-                        <option value="">กรุณาเลือก</option>
-                                                <option value="34">Adidas</option>
-                                                <option value="67">Bausch &amp; Lomb</option>
-                                                <option value="16">Beverly Hills Polo Club : BHPC</option>
-                                                <option value="39" >Bossini</option>
-                    </select>
+                @foreach ($products as $category)
+                    <form action="{{ route('productdetail', ['id' => $category->id])}}" method="GET">
+                    @endforeach
+                        <select name="category" style="border-radius: .5rem; font-size:14px">
+                            <option value="" selected disabled>Select Category</option>
+                            @foreach ($products as $category)
+                                <option value="{{ $category->id }}">{{ $category->color }}</option>
+                            @endforeach
+                        </select>
+
+                        <button type="submit" class="ml-2" >Search</button>
+                    </form>
                 </div>
 
                 {{-- วัสดุ --}}
@@ -45,13 +55,18 @@
                     {{ 'วัสดุ | Material' }}
                 </div>
                 <div class="px-6 pt-2 text-blue-900 flex">
-                    <select class="h-10" style="border-radius: .5rem; font-size:14px" onchange="this.form.submit()">
-                        <option value="">กรุณาเลือก</option>
-                                                <option value="34">Adidas</option>
-                                                <option value="67">Bausch &amp; Lomb</option>
-                                                <option value="16">Beverly Hills Polo Club : BHPC</option>
-                                                <option value="39">Bossini</option>
-                    </select>
+                @foreach ($products as $category)
+                    <form action="{{ route('productdetail', ['id' => $category->id])}}" method="GET">
+                    @endforeach
+                        <select name="category" style="border-radius: .5rem; font-size:14px">
+                            <option value="" selected disabled>Select Category</option>
+                            @foreach ($products as $category)
+                                <option value="{{ $category->id }}">{{ $category->material }}</option>
+                            @endforeach
+                        </select>
+
+                        <button type="submit" class="ml-2" >Search</button>
+                    </form>
                 </div>
 
                 {{-- ประเภท --}}
@@ -59,13 +74,18 @@
                     {{ 'ประเภท | Type' }}
                 </div>
                 <div class="px-6 pt-2 text-blue-900 flex">
-                    <select class="h-10" style="border-radius: .5rem; font-size:14px" onchange="this.form.submit()">
-                        <option value="">กรุณาเลือก</option>
-                                                <option value="34">Adidas</option>
-                                                <option value="67">Bausch &amp; Lomb</option>
-                                                <option value="16">Beverly Hills Polo Club : BHPC</option>
-                                                <option value="39">Bossini</option>
-                    </select>
+                @foreach ($products as $category)
+                    <form action="{{ route('productdetail', ['id' => $category->id])}}" method="GET">
+                    @endforeach
+                        <select name="category" style="border-radius: .5rem; font-size:14px">
+                            <option value="" selected disabled>Select Category</option>
+                            @foreach ($products as $category)
+                                <option value="{{ $category->id }}">{{ $category->type }}</option>
+                            @endforeach
+                        </select>
+
+                        <button type="submit" class="ml-2" >Search</button>
+                    </form>
                 </div>
             </div>
             <div class="line bg-blue-900"></div>
@@ -87,4 +107,3 @@
     </div>
 
 </x-app-layout>
-

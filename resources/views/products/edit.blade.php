@@ -63,6 +63,14 @@
                         <input type="text" name="details" id="details" value="{{$products->de}}" class="form-control mb-4" style="width: 90%"required></br>
                         <label>Picture</label>
                         <input type="file" name="picture" id="picture" value="{{$products->picture}}" class="form-control mb-4" style="width: 90%"required></br>
+                        <label>Shape</label>
+                        <input type="file" name="picture" id="picture" class="form-control mb-4" style="width: 90%"required></br>
+                        <label>Color</label>
+                        <input type="file" name="picture" id="picture" class="form-control mb-4" style="width: 90%"required></br>
+                        <label>Material</label>
+                        <input type="file" name="picture" id="picture" class="form-control mb-4" style="width: 90%"required></br>
+                        <label>Type</label>
+                        <input type="file" name="picture" id="picture" class="form-control mb-4" style="width: 90%"required></br>
                         <input type="submit" value="Update" class="mt-10 bg-yellow-400 px-2 p3 cursor-pointer hover:bg-yellow-300" style="width:200px; border-radius:10px; height:30px; margin-left:-35px"></br>
                     </form>
                     

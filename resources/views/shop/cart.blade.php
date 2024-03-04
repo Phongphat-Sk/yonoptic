@@ -16,7 +16,7 @@
                 <div class="mt-3 line bg-gray-500"></div>
                 @include('shop.productcart')
             </div>
-
+            @isset($cart)
             <div class="mt-3 mx-8 carttopic text-right" style="width: 30% ;font-size: 20px">
                 {{ 'CART TOTALS' }}
                 <div class="mt-5 line bg-gray-400" ></div>
@@ -25,9 +25,11 @@
                     <div class="topic">
                         {{ 'Subtotal' }}
                     </div>
-                    <div class="topic">
-                        {{ $totalPrice }}
+                    @foreach($cart as $item)
+                    <div class="topic flex flex-col">
+                        {{ $item['price'] }}
                     </div>
+                    @endforeach
                     {{ 'THB' }}
                 </div>
                 <div class="mt-5 line bg-gray-400" ></div>
@@ -56,9 +58,11 @@
                             {{ 'Total' }}
                         </b>
                     </div>
+                    @foreach($cart as $item)
                     <div class="topic mt-1">
-                        {{ $totalPrice }}
+                        {{ $item['qty'] * $item['price'] }}
                     </div>
+                    @endforeach
                     <div class="topic mt-1">
                         {{ 'THB' }}
                     </div>
@@ -69,18 +73,15 @@
                     <a href="" class=" flex justify-center">
                         <button class="bg-blue-700 mt-5 mx-auto h-14 text-white font-semibold  hover:bg-blue-500" style="border-radius: .1px; width:100%; font-weight:bold">Proceed to Checkout</button>
                     </a>
-                    <a href="home" class=" flex justify-center">
+                    <a href="/" class=" flex justify-center">
                         <button class="bg-blue-700 mt-5 mx-auto h-14 text-white font-semibold  hover:bg-blue-500" style="border-radius: 25px; width:50%">กลับสู่หน้าหลัก</button>
                     </a>
                 </div>
-
-
             </div>
-
+            @endisset
 
 
             <div class="mb-10"></div>
-
         </div>
     </div>
 

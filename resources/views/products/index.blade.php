@@ -69,6 +69,10 @@
                                         <th>Price</th>
                                         <th>Details</th>
                                         <th>Picture</th>
+                                        <th>Shape</th>
+                                        <th>Color</th>
+                                        <th>Material</th>
+                                        <th>Type</th>
 
                                     </tr>
                                 </thead>
@@ -80,6 +84,10 @@
                                             <td>{{ $item->price }}</td>
                                             <td>{{ $item->details }}</td>
                                             <td>{{ $item->picture }}</td>
+                                            <td>{{ $item->shape }}</td>
+                                            <td>{{ $item->color }}</td>
+                                            <td>{{ $item->material }}</td>
+                                            <td>{{ $item->type }}</td>
                                             <td class="px-6">
                                                 <a
                                                     href="{{ url('/product/' . $item->id) }}"

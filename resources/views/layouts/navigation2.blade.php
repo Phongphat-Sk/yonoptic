@@ -61,8 +61,11 @@
                     <x-nav-link :href="route('contact')" :active="request()->routeIs('contact')">
                         {{ __('ติดต่อเรา') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('history')" :active="request()->routeIs('history')">
+                        {{ __('ประวัติการสั่งซื้อ') }}
+                    </x-nav-link>
                     <div class="sm:flex sm:justify-center sm:items-center" style="border:none;">
-                        <a href="{{ route('cart') }}">
+                        <a href="{{ route('cart.index') }}">
                             <x-cart-logo class="mt-9 ml-5" style="height: 80px;" />
                         </a>
                     </div>

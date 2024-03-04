@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SettingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,18 +34,27 @@ Route::get('/shop', function () {
     return view('shop.shop');
 })->middleware(['auth', 'verified'])->name('shop');
 
+Route::get('/history', function () {
+    return view('shop.history');
+})->middleware(['auth', 'verified'])->name('history');
+
 Route::get('/shop', [App\Http\Controllers\ShopController::class, 'index'])->name('shop');
 
 Route::get('admin', [HomeController::class, 'admin'])
   ->middleware(['auth','admin'])->name('admin');
 
-Route::get('/cart', function () {
+/*Route::get('/cart', function () {
     return view('shop.cart');
-})->middleware(['auth', 'verified'])->name('cart');
+})->middleware(['auth', 'verified'])->name('cart');*/
 
-Route::get('/cart', [App\Http\Controllers\CartController::class, 'sub'])->name('cart.index');
+//Route::get('/cart', [App\Http\Controllers\CartController::class, 'sub'])->name('cart.index');
 
-Route::post('/add-to-cart', [App\Http\Controllers\CartController::class, 'addToCart'])->name('cart.add');
+
+Route::get('/cart', [App\Http\Controllers\CartController::class, 'index'])->name('cart.index');
+
+Route::delete('/cart/{id}', [App\Http\Controllers\CartController::class, 'remove'])->name('cart.remove');
+
+Route::post('/cart', [App\Http\Controllers\CartController::class, 'addToCart'])->name('cart.add');
 
 Route::get('/contact', function () {
     return view('contact');

@@ -54,6 +54,10 @@
                         <p class="card-text">Price : {{ $products->price }}</p>
                         <p class="card-text">Details : {{ $products->details }}</p>
                         <p class="card-text mt-7">Picture : {{ $products->picture }}</p>
+                        <p class="card-text">Details : {{ $products->shape }}</p>
+                        <p class="card-text">Details : {{ $products->color }}</p>
+                        <p class="card-text">Details : {{ $products->material }}</p>
+                        <p class="card-text">Details : {{ $products->type }}</p>
                    </div>
                     </hr>
                   </div>
