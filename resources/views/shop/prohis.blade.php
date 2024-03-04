@@ -1,5 +1,5 @@
 @foreach($products as $product)
-        <div class="bg-gray-100 my-3 p-4 " style='width:20%; border:1px solid black'>
+        <div class="bg-gray-100 my-3 p-4 mx-5" style='width:20%; border:1px solid black'>
             <div class="p-2 text-black flex flex-col">
                 <div class="flex justify-center">
                     <a href="{{ route('productdetail', $product['id']) }}">
