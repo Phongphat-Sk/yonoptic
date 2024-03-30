@@ -52,6 +52,7 @@
             </div>
 
         </div>
+        
         <div class="flex mx-auto w-full">
             <div class="bg-gray-100 flex flex-col m-auto p-5" style="width:40%; height:200px; border-radius:20px">
                 <div class="" style="font-size: 20px; font-weight:bold">
