@@ -1,6 +1,6 @@
 ขั้นตอนการนำโปรเจคไปใช้
 
-cd kobcharoen 
+cd  yonoptic
 
 composer install
 
