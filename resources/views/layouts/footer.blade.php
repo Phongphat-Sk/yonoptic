@@ -15,23 +15,23 @@
         </div>
         <div class="flex mt-2 max-w-xl">
             <svg viewBox="0 0 20 20" class="mt-4">
-                <a href="https://facebook.com">
+                <a href="https://web.facebook.com/yonoptic">
                     <image href="{{ asset('pic/fb.png') }}" width='70%' height='70%'/>
                 </a>
             </svg>
             <svg viewBox="0 0 20 20" >
-                <a href="https://tiktok.com">
+                <a href="https://www.tiktok.com/@yonoptic">
                     <image href="{{ asset('pic/tiktok.png') }}" width='100%' height='100%'/>
                 </a>
             </svg>
             <svg viewBox="0 0 20 20" >
-                <a href="https://line.com">
+                <a href="https://line.me/R/ti/p/@969lsfcx?oat_content=url">
                     <image href="{{ asset('pic/line.png') }}" width='100%' height='100%'/>
                 </a>
             </svg>
         </div>
         <div class="flex text-black font-semibold text-l">
-            {{ 'kopcharoen@gmail.com' }}
+            {{ 'yonoptic@gmail.com' }}
         </div>
 
     </div>
