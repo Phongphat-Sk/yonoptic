@@ -19,25 +19,22 @@
                 <div class="bg-blue-200 h-auto mt-10 p-5" style="font-size:20px; border-radius:10px; width: 80%">
                     <div class="flex justify-between px-10">
                         <div class="text-blue-700">{{'Mobile'}}</div>
-                        <div class="text-blue-400">{{'099-999-9999'}}</div>
+                        <div class="text-blue-400">{{'080 565 6636'}}</div>
                     </div>
                     <div class="mt-5 flex justify-between px-10">
                         <div class="text-blue-700">{{'Email'}}</div>
-                        <div class="text-blue-400">{{'Copcharoen@gmail.com'}}</div>
+                        <div class="text-blue-400">{{'yonoptic@gmail.com'}}</div>
                     </div>
                     <div class="mt-5 flex justify-between px-10">
                         <div class="text-blue-700">{{'Facebook'}}</div>
-                        <div class="text-blue-400">{{'Copcharoen'}}</div>
+                        <div class="text-blue-400">{{'ร้าน แว่นตาคุณยน '}}</div>
                     </div>
-                    <div class="mt-5 flex justify-between px-10">
-                        <div class="text-blue-700">{{'Line'}}</div>
-                        <div class="text-blue-400">{{'@Copcharoen999'}}</div>
-                    </div>
+                  
                 </div>
                 <div class="mt-5 p-5 flex justify-center" style="font-size:25px; border-radius:10px; width: 80%">
                     <div class="flex flex-col justify-center">
                         <div class="text-blue-700 flex justify-center">{{'Operating Hours'}}</div>
-                        <div class="mt-2 text-blue-400 flex justify-center" style="font-size: 20px">{{'09:00-18:00 (Monday - Saturday)'}}</div>
+                        <div class="mt-2 text-blue-400 flex justify-center" style="font-size: 20px">{{'09:30-18:00 (tuesday - Sunday)'}}</div>
                     </div>
                 </div>
 

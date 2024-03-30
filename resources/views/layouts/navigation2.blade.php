@@ -10,7 +10,7 @@
                     <!-- โลโก้ -->
                     <div class="pt-3 sm:flex sm:justify-center sm:items-center mr-10" style="border:none; margin-left: -10%">
                         <a href="{{ route('home') }}">
-                            <x-application-logo class="" style="height: 200px;" />
+                            <x-application-logo class="" style="height: 150px;" />
                         </a>
                     </div>
 
