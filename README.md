@@ -4,7 +4,7 @@ cd  yonoptic
 
 composer install
 
-npm install -g vite
+sudo npm install -g vite
 
 npm install --save-dev vite
 
